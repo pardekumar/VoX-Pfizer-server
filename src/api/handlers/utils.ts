@@ -1,7 +1,7 @@
 const data: any = [
   {
     session_id: 1,
-    title: "sample session",
+    title: "sample session 1",
     created_ts: "2023-06-12T14:56:29",
     temp: 0.1,
     engine: "",
@@ -31,7 +31,7 @@ const data: any = [
   },
   {
     session_id: 2,
-    title: "sample session",
+    title: "sample session 2",
     created_ts: "2023-06-12T14:56:29",
     temp: 0.1,
     max_tokens: 125,
@@ -150,7 +150,7 @@ export default {
           const newResMsg: any = {
             msg_id: maxId + 1,
             usr_session_id: session_id,
-            msg_type: "prompt",
+            msg_type: "assistant",
             msg: "response content here",
             msg_seq_num: seqInd + 2,
             msg_ts: new Date(),
