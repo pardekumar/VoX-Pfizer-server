@@ -1,0 +1,204 @@
+{
+	"info": {
+		"_postman_id": "49ce59af-3bb4-48a3-a7aa-5a04ca1dcaef",
+		"name": "Pfizer-VoC-Dummy-API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "chatSessions/chat_history/get",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "session_id",
+							"value": "1",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:5101/chatSessions/chat_history/get",
+					"host": [
+						"localhost"
+					],
+					"port": "5101",
+					"path": [
+						"chatSessions",
+						"chat_history",
+						"get"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "chatSessions/session/get",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:5101/chatSessions/session/get",
+					"host": [
+						"localhost"
+					],
+					"port": "5101",
+					"path": [
+						"chatSessions",
+						"session",
+						"get"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "chatSessions/session/create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "temp",
+							"value": "0.5",
+							"type": "default"
+						},
+						{
+							"key": "max_tokens",
+							"value": "50",
+							"type": "default"
+						},
+						{
+							"key": "engine",
+							"value": "engine11111",
+							"type": "default"
+						},
+						{
+							"key": "title",
+							"value": "new chat",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:5101/chatSessions/session/create",
+					"host": [
+						"localhost"
+					],
+					"port": "5101",
+					"path": [
+						"chatSessions",
+						"session",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "chatSessions/session/update",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "session_id",
+							"value": "3",
+							"type": "default"
+						},
+						{
+							"key": "temp",
+							"value": "0.2",
+							"type": "default"
+						},
+						{
+							"key": "max_tokens",
+							"value": "50",
+							"type": "default"
+						},
+						{
+							"key": "engine",
+							"value": "engine11111",
+							"type": "default"
+						},
+						{
+							"key": "title",
+							"value": "new chat",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:5101/chatSessions/session/update",
+					"host": [
+						"localhost"
+					],
+					"port": "5101",
+					"path": [
+						"chatSessions",
+						"session",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "chatSessions/vox/completion",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "session_id",
+							"value": "3",
+							"type": "default"
+						},
+						{
+							"key": "temperature",
+							"value": "0.2",
+							"type": "default"
+						},
+						{
+							"key": "max_tokens",
+							"value": "50",
+							"type": "default"
+						},
+						{
+							"key": "engine",
+							"value": "engine11111",
+							"type": "default"
+						},
+						{
+							"key": "messages",
+							"value": "[{\"role\":\"system\",\"content\":\"You are a digital assistant for Pfizer Inc.\"},{\"role\":\"user\",\"content\":\"Who is the founder of Pfizer ?\"}]",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:5101/chatSessions/vox/completion",
+					"host": [
+						"localhost"
+					],
+					"port": "5101",
+					"path": [
+						"chatSessions",
+						"vox",
+						"completion"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
