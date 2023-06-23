@@ -62,9 +62,9 @@ export default {
     for (let i = data.length - 1; i >= 0; i = i - 1) {
       retData.push({
         session_id: data[i].session_id,
-        session_title: data[i].title,
+        session_title: data[i].session_title,
         created_ts: data[i].created_ts,
-        temperature: data[i].temp,
+        temperature: data[i].temperature,
         max_tokens: data[i].max_tokens,
         engine: data[i].engine,
       });
