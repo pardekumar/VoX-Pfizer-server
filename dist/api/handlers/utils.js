@@ -172,5 +172,6 @@ exports.default = {
             totalTokens: 50,
         };
     },
+    getMarkdown: 
 };
 //# sourceMappingURL=utils.js.map

@@ -174,4 +174,5 @@ export default {
       totalTokens: 50,
     };
   },
+  getMarkdown::
 };
