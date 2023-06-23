@@ -1,9 +1,9 @@
 const data: any = [
   {
     session_id: 1,
-    title: "sample session 1",
+    session_title: "sample session 1",
     created_ts: "2023-06-12T14:56:29",
-    temp: 0.1,
+    temperature: 0.1,
     engine: "",
     max_tokens: 125,
     messages: [
@@ -31,9 +31,9 @@ const data: any = [
   },
   {
     session_id: 2,
-    title: "sample session 2",
+    session_title: "sample session 2",
     created_ts: "2023-06-12T14:56:29",
-    temp: 0.1,
+    temperature: 0.1,
     max_tokens: 125,
     messages: [],
   },
@@ -62,9 +62,9 @@ export default {
     for (let i = data.length - 1; i >= 0; i = i - 1) {
       retData.push({
         session_id: data[i].session_id,
-        title: data[i].title,
+        session_title: data[i].title,
         created_ts: data[i].created_ts,
-        temp: data[i].temp,
+        temperature: data[i].temp,
         max_tokens: data[i].max_tokens,
         engine: data[i].engine,
       });
@@ -109,8 +109,8 @@ export default {
         status = "success";
         data[i] = {
           ...data[i],
-          title,
-          temp,
+          session_title: title,
+          temperature: temp,
           max_tokens,
           engine,
         };
