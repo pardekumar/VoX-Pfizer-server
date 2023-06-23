@@ -1,3 +1,6 @@
+import fs from "fs";
+import path from "path";
+
 const data: any = [
   {
     session_id: 1,
@@ -39,6 +42,15 @@ const data: any = [
   },
 ];
 let sessionInd = 2;
+
+const getMarkdown = () => {
+  const filePath = path.resolve(
+    `src/api/markdown/${Math.floor(Math.random() * 6)}.md`
+  );
+
+  const data = fs.readFileSync(filePath, "utf8");
+  return data;
+};
 
 export default {
   addSession: (params: any) => {
@@ -151,7 +163,7 @@ export default {
             msg_id: maxId + 1,
             usr_session_id: session_id,
             msg_type: "assistant",
-            msg: "response content here",
+            msg: getMarkdown(),
             msg_seq_num: seqInd + 2,
             msg_ts: new Date(),
             parent_msg_id: maxId,
@@ -174,5 +186,4 @@ export default {
       totalTokens: 50,
     };
   },
-  getMarkdown::
 };

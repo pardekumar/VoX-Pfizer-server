@@ -1,5 +1,10 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
+const fs_1 = __importDefault(require("fs"));
+const path_1 = __importDefault(require("path"));
 const data = [
     {
         session_id: 1,
@@ -41,6 +46,11 @@ const data = [
     },
 ];
 let sessionInd = 2;
+const getMarkdown = () => {
+    const filePath = path_1.default.resolve(`src/api/markdown/${Math.floor(Math.random() * 6)}.md`);
+    const data = fs_1.default.readFileSync(filePath, "utf8");
+    return data;
+};
 exports.default = {
     addSession: (params) => {
         const { temp, max_tokens, engine, title } = params;
@@ -149,7 +159,7 @@ exports.default = {
                         msg_id: maxId + 1,
                         usr_session_id: session_id,
                         msg_type: "assistant",
-                        msg: "response content here",
+                        msg: getMarkdown(),
                         msg_seq_num: seqInd + 2,
                         msg_ts: new Date(),
                         parent_msg_id: maxId,
@@ -172,6 +182,5 @@ exports.default = {
             totalTokens: 50,
         };
     },
-    getMarkdown: 
 };
 //# sourceMappingURL=utils.js.map
